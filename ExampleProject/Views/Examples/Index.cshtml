@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using ExampleProject.Models;
+@model List<ExampleProject.Models.Example>;
+
+<h1>Examples</h1>
+
+<ul>
+  @foreach (Example example in Model)
+  {
+    <li>@Html.ActionLink($"{example.Description}", "Details", new { id = example.ExampleId })
+  </li>
+  }
+</ul>
+
+<p>@Html.ActionLink("Add new example", "Create")</p>

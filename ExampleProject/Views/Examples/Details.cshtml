@@ -1,0 +1,10 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ExampleProject.Models.Example
+
+<h2>Example Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+<p></p>@Html.ActionLink("Back to list", "Index")</p>
