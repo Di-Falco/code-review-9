@@ -36,12 +36,8 @@ namespace HairSalon.Controllers
 
     public ActionResult Details(int id)
     {
-      Dictionary<string, object> model = new Dictionary<string, object> ();
       Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      List<Client> thisClients = _db.Clients.Where(client => client.StylistId == id).ToList();
-      model.Add("stylist", thisStylist);
-      model.Add("clients", thisClients);
-      return View(model);
+      return View(thisStylist);
     }
 
     public ActionResult Edit(int id)
@@ -60,12 +56,8 @@ namespace HairSalon.Controllers
 
     public ActionResult Delete(int id)
     {
-      Dictionary<string, object> model = new Dictionary<string, object> ();
-      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      List<Client> thisClients = _db.Clients.Where(client => client.StylistId == id).ToList();
-      model.Add("stylist", thisStylist);
-      model.Add("clients", thisClients);
-      return View(model);
+      var thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
 
     [HttpPost, ActionName("Delete")]

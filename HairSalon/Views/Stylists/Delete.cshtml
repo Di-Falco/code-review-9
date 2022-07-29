@@ -1,17 +1,18 @@
 @{ Layout = "_Layout"; }
 
 @using HairSalon.Models
+@model HairSalon.Models.Stylist
 
 <h2>Stylist Details</h2>
 <hr />
-<h3>Details for stylist: @Model["stylist"].Name</h3>
+<h3>@Html.DisplayFor(model => model.Name)</h3>
 <p>Clients:</p>
-@if(@Model["clients"].Count == 0)
+@if(@Model.Clients.Count == 0)
 {
   <p><em>There are no clients for this stylist</em></p>
 } else {
   <ul>
-  @foreach(Client client in Model["clients"])
+  @foreach(Client client in Model.Clients)
   {
     <li>@Html.ActionLink($"{client.Name}", "Details", "Clients" , new { id = client.ClientId })</li>
   }
@@ -20,10 +21,10 @@
 <h2>Are you sure you want to delete this stylist?</h2>
 <hr />
 
-<h4>@Model["stylist"].Name</h4>
+<h4>@Model.Name</h4>
 @using (Html.BeginForm())
 {
-  <button type="submit" name="id" value='@Model["stylist"].StylistId'>Delete</button><br>
+  <button type="submit" name="id" value='@Model.StylistId'>Delete</button><br>
 }
 <hr />
 <a href='@Url.Action("Index")'><button>Back to List</button></a>&emsp;
