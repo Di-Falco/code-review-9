@@ -1,0 +1,18 @@
+@{ Layout = "_Layout"; }
+
+@model HairSalon.Models.Client
+
+<h2>Edit</h2>
+
+<h4>Edit details for this client: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.StylistId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+
+  <input type="submit" value="Save" />
+}
+<button>@Html.ActionLink("Back to List", "Index")</button>

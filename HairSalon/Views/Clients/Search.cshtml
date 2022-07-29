@@ -1,0 +1,11 @@
+@{ Layout = "_Layout"; }
+
+@using HairSalon.Models;
+@model List<HairSalon.Models.Client>;
+
+<form action="Clients/Search" method="post">
+  <label for="searchPhrase">Search:</label>
+  <input id="searchPhrase" name="searchPhrase" type="text">
+  <button type="submit">Search</button>
+</form>
+<button>@Html.ActionLink("Home", "Index", "Home")</button>

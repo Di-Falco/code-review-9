@@ -1,6 +1,4 @@
-@{
-  Layout = "_Layout";
-}
+@{ Layout = "_Layout"; }
 
 @using HairSalon.Models;
 @model List<HairSalon.Models.Client>;
@@ -15,4 +13,4 @@
   }
 </ul>
 
-<p>@Html.ActionLink("Add new client", "Create")</p>
+<button>@Html.ActionLink("Add new client", "Create")</button>

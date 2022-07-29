@@ -1,6 +1,4 @@
-@{
-  Layout = "_Layout";
-}
+@{ Layout = "_Layout"; }
 
 @model HairSalon.Models.Client
 
@@ -11,4 +9,4 @@
   @Html.TextBoxFor(model => model.Name)
   <input type="submit" value="Add new client" />
 }
-<p>@Html.ActionLink("Show all clients", "Index")</p>
+<button>@Html.ActionLink("Show all clients", "Index")</button>
