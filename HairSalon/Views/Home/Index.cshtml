@@ -1,5 +1,8 @@
 @{ Layout = "_Layout"; }
 
 <h1>Welcome to the Hair Salon</h1>
-<button><a href='/stylists'>View Stylists</a></button>
-<button><a href='/stylists/create'>Add a new stylist</a></button>
+<hr />
+<a href='@Url.Action("Index", "Stylists")'><button>View Stylists</button></a>&emsp;
+<a href='@Url.Action("Create", "Stylists")'><button>Add Stylist</button></a><br><br>
+<a href='@Url.Action("Index", "Clients")'><button>View Clients</button></a>&emsp;
+<a href='@Url.Action("Create", "Clients")'><button>Add Client</button></a>

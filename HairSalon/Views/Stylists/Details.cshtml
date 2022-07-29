@@ -8,15 +8,17 @@
 <p>Clients:</p>
 @if(@Model["clients"].Count == 0)
 {
-  <em>There are no clients for this stylist</em>
+  <p><em>There are no clients for this stylist</em></p>
 } else {
   <ul>
   @foreach(Client client in Model["clients"])
   {
-    <li>@client.Name</li>
+    <li>@Html.ActionLink($"{client.Name}", "Details", "Clients" , new { id = client.ClientId })</li>
   }
   </ul>
 }
-<button>@Html.ActionLink("Edit Stylist", "Edit", new { id = @Model["stylist"].StylistId })</button>
-<button>@Html.ActionLink("Delete Stylist", "Delete", new { id = @Model["stylist"].StylistId })</button>
-<button>@Html.ActionLink("Back to List", "Index")</button>
+<a href='@Url.Action("Create", "Clients")'><button>Add Client</button></a>&emsp;
+<a href='@Url.Action("Edit", new { id = @Model["stylist"].StylistId })'><button>Edit Stylist</button></a>&emsp;
+<a href='@Url.Action("Delete", new { id = @Model["stylist"].StylistId })'><button>Delete Stylist</button></a>&emsp;
+<a href='@Url.Action("Index")'><button>Back to List</button></a>&emsp;
+<a href='@Url.Action("Index", "Home")'><button>Home</button></a>

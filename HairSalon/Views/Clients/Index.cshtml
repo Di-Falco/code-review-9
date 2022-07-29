@@ -4,6 +4,7 @@
 @model List<HairSalon.Models.Client>;
 
 <h1>Clients</h1>
+<hr />
 
 <ul>
   @foreach (Client client in Model)
@@ -12,5 +13,6 @@
   }
 </ul>
 
-<button>@Html.ActionLink("See all Stylists", "Index", "Stylists")</button>
-<button>@Html.ActionLink("Add new client", "Create")</button>
+<a href='@Url.Action("Index", "Stylists")'><button>See all Stylists</button></a>&emsp;
+<a href='@Url.Action("Create")'><button>Add new client</button></a>&emsp;
+<a href='@Url.Action("Index", "Home")'><button>Home</button></a>
