@@ -16,6 +16,6 @@
 
   <input type="submit" value="Save" />
 }
-<button>@Html.ActionLink("Add Client", "Create", "Clients")</button>&emsp;
-<button>@Html.ActionLink("Back to List", "Index")</button>&emsp;
-<button>@Html.ActionLink("Home", "Index", "Home")</button>
+<a href='@Url.Action("Create", "Clients")'><button>Add Client</button></a>&emsp;
+<a href='@Url.Action("Index")'><button>Back to List</button></a>&emsp;
+<a href='@Url.Action("Index", "Home")'><button>Home</button></a>
