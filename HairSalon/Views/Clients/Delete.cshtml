@@ -8,7 +8,6 @@
 @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.ClientId)
   <button type="submit" name="id" value="@Model.ClientId">Delete</button><br>
 }
 <a href='@Url.Action("Index")'><button>Back to List</button></a>&emsp;
