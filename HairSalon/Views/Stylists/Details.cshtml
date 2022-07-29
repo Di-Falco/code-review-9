@@ -17,8 +17,11 @@
   }
   </ul>
 }
-<a href='@Url.Action("Create", "Clients")'><button>Add Client</button></a>&emsp;
+<hr />
+<a href='@Url.Action("Create", "Clients")'><button>Add Client</button></a>
+<hr />
 <a href='@Url.Action("Edit", new { id = @Model["stylist"].StylistId })'><button>Edit Stylist</button></a>&emsp;
-<a href='@Url.Action("Delete", new { id = @Model["stylist"].StylistId })'><button>Delete Stylist</button></a>&emsp;
+<a href='@Url.Action("Delete", new { id = @Model["stylist"].StylistId })'><button>Delete Stylist</button></a>
+<hr />
 <a href='@Url.Action("Index")'><button>Back to List</button></a>&emsp;
 <a href='@Url.Action("Index", "Home")'><button>Home</button></a>
