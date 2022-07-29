@@ -60,7 +60,6 @@ namespace HairSalon.Controllers
     public ActionResult Delete(int id)
     {
       var thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-      ViewBag.id = id;
       return View(thisClient);
     }
 
